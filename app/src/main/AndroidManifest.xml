@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrowCast"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="cae6d8c4b4msh36f9ccfb43058c8p1872f9jsnf80db829f449" />
+
         <activity
             android:name=".login"
             android:exported="true">
@@ -24,6 +28,8 @@
         <activity android:name=".user"></activity>
         <activity android:name=".forgot"></activity>
         <activity android:name=".page1"></activity>
+        <activity android:name=".shop"></activity>
+
     </application>
 
 </manifest>

@@ -82,6 +82,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:id="@+id/shop"
+        android:onClick="shop"
         android:background="@drawable/toolbg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import com.example.map.shop;
+
 
 
 public class page1 extends AppCompatActivity {
@@ -31,6 +33,12 @@ public class page1 extends AppCompatActivity {
 
 
         Intent intent=new Intent(page1.this,user.class);
+        startActivity(intent);
+    }
+    public void shop(View v){
+
+
+        Intent intent=new Intent(page1.this,shop.class);
         startActivity(intent);
     }
 }
