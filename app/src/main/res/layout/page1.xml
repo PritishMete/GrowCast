@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/appbg1"
+    android:background="@drawable/appbg4"
     android:orientation="vertical"
     tools:context=".page1"
     >
@@ -27,7 +27,7 @@
         android:background="@drawable/buttonbg"
         android:padding="5dp"
         android:text="Select an item"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,66 +39,70 @@
 
     <ImageButton
         android:id="@+id/button"
-        android:layout_width="219dp"
-        android:layout_height="151dp"
-        android:background="@drawable/lb"
+        android:onClick="flower"
+        android:layout_width="162dp"
+        android:layout_height="51dp"
+        android:background="@drawable/flowerb"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.749"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintVertical_bias="0.243" />
 
     <ImageButton
         android:id="@+id/button2"
-        android:layout_width="219dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/la"
+        android:onClick="vegetable"
+        android:layout_width="162dp"
+        android:layout_height="51dp"
+        android:background="@drawable/vegetableb"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <ImageButton
         android:id="@+id/button3"
-        android:layout_width="219dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/lc"
+        android:layout_width="162dp"
+        android:layout_height="51dp"
+        android:background="@drawable/fruitb"
+        android:onClick="fruit"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="100dp"
-        android:layout_height="50dp"
         android:id="@+id/shop"
         android:onClick="shop"
+
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:background="@drawable/toolbg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:logo="@drawable/shopbag"
-        app:title="Shop"
-        app:titleTextColor="@color/white"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:logo="@drawable/shopbag"
+        app:title="Shop"
+        app:titleTextColor="@color/white" />
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/plant"
+        android:onClick="plant"
+
         android:layout_width="55dp"
         android:layout_height="50dp"
         android:background="@drawable/toolbgl"
-        android:id="@+id/plant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -108,10 +112,11 @@
         app:logo="@drawable/leaf" />
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="55dp"
-        android:layout_height="50dp"
         android:id="@+id/account"
         android:onClick="account"
+
+        android:layout_width="55dp"
+        android:layout_height="50dp"
         android:background="@drawable/toolbgr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,5 +125,41 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:logo="@drawable/account" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130dp"
+        android:layout_height="102dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.282"
+        app:srcCompat="@drawable/flowericon" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="107dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781"
+        app:srcCompat="@drawable/fruiticon" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="118dp"
+        android:layout_height="114dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.416"
+        app:srcCompat="@drawable/vegeicon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

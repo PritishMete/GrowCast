@@ -2,8 +2,7 @@ package com.example.growcast;
 
 import static android.text.TextUtils.isEmpty;
 
-import static com.example.growcast.R.id.name;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +12,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class signup extends AppCompatActivity {
     private EditText name,mail,phone,pass,repass;
+    private Button signup;
+
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
+
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +33,9 @@ public class signup extends AppCompatActivity {
         phone= (EditText) findViewById(R.id.phone);
         pass= (EditText) findViewById(R.id.pass);
         repass= (EditText) findViewById(R.id.repass);
+        signup= (Button) findViewById(R.id.signup);
+
+
 
     }
 

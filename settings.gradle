@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "GrowCast"
 include ':app'
-include ':shop'

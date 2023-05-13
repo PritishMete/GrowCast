@@ -1,10 +1,5 @@
 package com.example.growcast;
 
-import static android.text.TextUtils.isEmpty;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,16 +7,23 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class login extends AppCompatActivity {
 
     private EditText user, pass;
-
     private Button login,signup,forgot;
 
-    @SuppressLint("MissingInflatedId")
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,9 @@ public class login extends AppCompatActivity {
         pass= (EditText) findViewById(R.id.pass);
         forgot= (Button) findViewById(R.id.forgot);
         signup= (Button) findViewById(R.id.signup);
+        login= (Button) findViewById(R.id.login);
+
+
     }
 
     public void fun(View v){

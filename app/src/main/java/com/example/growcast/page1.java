@@ -1,15 +1,12 @@
 package com.example.growcast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import com.example.map.shop;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 
 
@@ -39,6 +36,31 @@ public class page1 extends AppCompatActivity {
 
 
         Intent intent=new Intent(page1.this,shop.class);
+        startActivity(intent);
+    }
+    public void flower(View v){
+
+
+        Intent intent=new Intent(page1.this,flowerscroll.class);
+        startActivity(intent);
+    }
+    public void vegetable(View v){
+
+
+        Intent intent=new Intent(page1.this, vegscroll.class);
+        startActivity(intent);
+    }
+    public void fruit(View v){
+
+
+        Intent intent=new Intent(page1.this, fruitscroll.class);
+        startActivity(intent);
+    }
+
+    public void plant(View v){
+
+
+        Intent intent=new Intent(page1.this, weather.class);
         startActivity(intent);
     }
 }
