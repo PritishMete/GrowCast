@@ -37,7 +37,7 @@ public class signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final String userName=name.getText().toString();
+                final String userName=name.getText().toString(); //todo ekhne username ta acche eta user page username er jaygay show korate hbe
                 final String email=mail.getText().toString();
                 final String phoneNumber=phone.getText().toString();
                 final String password=pass.getText().toString();

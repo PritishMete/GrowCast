@@ -27,7 +27,7 @@ public class user extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView dp;
     private Uri mImageUri;
-    private TextView UserName;
+    private TextView UserName; //todo username ta ekhne variable niiyechi eta try korchilam nije age ekbr seta test.java te kora ache
     private ViewStub signup;
     private TextView mail;
     private String uName;
