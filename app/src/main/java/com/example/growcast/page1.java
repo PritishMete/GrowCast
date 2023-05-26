@@ -12,12 +12,14 @@ import androidx.appcompat.widget.Toolbar;
 
 public class page1 extends AppCompatActivity {
     private Toolbar account;
+    private String uName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page1);
         account= (Toolbar) findViewById(R.id.account);
+        uName=getIntent().getStringExtra("user");
 
     }
 
@@ -30,6 +32,7 @@ public class page1 extends AppCompatActivity {
 
 
         Intent intent=new Intent(page1.this,user.class);
+        intent.putExtra("user",uName);
         startActivity(intent);
     }
     public void shop(View v){

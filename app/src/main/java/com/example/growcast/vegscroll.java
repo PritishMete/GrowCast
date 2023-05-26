@@ -40,4 +40,10 @@ public class vegscroll extends AppCompatActivity {
         Intent intent=new Intent(this,user.class);
         startActivity(intent);
     }
+    public void weather(View v){
+
+
+        Intent intent=new Intent(this,weather.class);
+        startActivity(intent);
+    }
 }

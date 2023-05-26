@@ -136,7 +136,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/design"
         android:hint="Enter password*"
-        android:inputType="numberPassword"
+        android:inputType="text"
         android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="#BEBEBE"
@@ -179,7 +179,6 @@
 
     <Button
         android:id="@+id/sgn"
-        android:onClick="signup"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
@@ -190,10 +189,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777" />
+        app:layout_constraintVertical_bias="0.789" />
 
     <Button
         android:id="@+id/lgn"

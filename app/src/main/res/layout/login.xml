@@ -138,7 +138,7 @@
         android:layout_height="47dp"
         android:layout_gravity="center_horizontal"
         android:background="@android:color/transparent"
-        android:onClick="fun"
+        android:onClick="performRegistration"
         android:text="Not a user? Register here"
         android:textAllCaps="false"
         android:textColor="@color/teal_200"

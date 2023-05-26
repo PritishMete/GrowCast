@@ -7,443 +7,241 @@
     android:background="@drawable/appbg2"
     tools:context=".flowerscroll">
 
-
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/shop"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
-            android:orientation="vertical">
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:columnCount="2"
-                >
-
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-            </GridLayout>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:columnCount="2"
-                >
-
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="#0003DAC5">
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ashoka"
-                            android:layout_width="180dp"
-                            android:layout_height="120dp"
-                            android:src="@drawable/ashoka" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-            </GridLayout>
-
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/back"
-        android:layout_width="156dp"
-        android:layout_height="47dp"
-        android:background="@drawable/backbt"
-        android:onClick="back"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018"
+        android:paddingLeft="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/ashoka"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ashoka" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/bluebell"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/bluebell" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/cactus"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/cactus" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/celendula"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/celendula" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/dahlia"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/dahlia" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/frangipani"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/frangipani" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/hibiscus"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/hibiscus" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/lily"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/lily" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/magnolia"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/magnolia" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/marigold"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/marigold" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/orchid"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/orchid" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/rose"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/rose" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/sunflower"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/sunflowe" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/tulip"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/tulip" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="#0003DAC5">
+
+                <ImageView
+                    android:id="@+id/jasmine"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/jasmine" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/back"
+        android:onClick="back"
+        android:layout_width="156dp"
+        android:layout_height="47dp"
+        android:background="@drawable/backbt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
         app:logo="@drawable/back" />
 
     <androidx.appcompat.widget.Toolbar
@@ -459,11 +257,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="116dp"
+        android:onClick="back"
 
+        android:layout_width="116dp"
         android:layout_height="47dp"
         android:background="@drawable/buttonbg"
-        android:onClick="back"
         android:padding="5dp"
         android:text="Flower"
         android:textColor="@color/white"
@@ -471,10 +269,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/shop"
@@ -494,7 +292,8 @@
         app:titleTextColor="@color/white" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/plant"
+        android:id="@+id/weather"
+        android:onClick="weather"
         android:layout_width="55dp"
         android:layout_height="50dp"
         android:background="@drawable/toolbgl"
@@ -504,12 +303,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:logo="@drawable/leaf" />
+        app:logo="@drawable/weather" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/account"
         android:onClick="account"
-
         android:layout_width="55dp"
         android:layout_height="50dp"
         android:background="@drawable/toolbgr"
@@ -520,6 +318,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:logo="@drawable/account" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

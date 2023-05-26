@@ -9,118 +9,125 @@
     >
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp">
+        android:text="temp"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="55dp" />
 
-        <ImageView
-            android:id="@+id/temp"
-            android:layout_width="225dp"
-            android:layout_height="236dp"
-            app:srcCompat="@drawable/circle"
-            tools:layout_editor_absoluteX="-13dp"
-            tools:layout_editor_absoluteY="0dp" />
+    <TextView
+        android:id="@+id/tempdigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100°c"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="55dp" />
 
-        <ImageView
-            android:id="@+id/air"
-            android:layout_width="195dp"
-            android:layout_height="83dp"
-            app:layout_constraintStart_toEndOf="@+id/temp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/air_uv" />
+    <TextView
+        android:id="@+id/high"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="high"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="105dp" />
 
-        <ImageView
-            android:id="@+id/uv"
-            android:layout_width="195dp"
-            android:layout_height="83dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@+id/temp"
-            app:layout_constraintTop_toBottomOf="@+id/air"
-            app:srcCompat="@drawable/air_uv" />
+    <TextView
+        android:id="@+id/hightempdigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="150°c"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="105dp" />
 
+    <TextView
+        android:id="@+id/low"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="low"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="187dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/lowtempdigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0°c"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="187dp" />
 
+    <TextView
+        android:id="@+id/uv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="uv"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="279dp" />
 
+    <TextView
+        android:id="@+id/uvdigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="279dp" />
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="230dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/airspeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="air speed"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="347dp" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="2"
-            >
+    <TextView
+        android:id="@+id/airspeeddigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100kmph"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="347dp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="390dp"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-            </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="humidity"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="428dp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="390dp"
-                android:layout_height="100dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-            </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/hightempdigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100%"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="428dp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_row="3"
-                android:layout_column="0"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_row="4"
-                android:layout_column="0"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
-            </androidx.cardview.widget.CardView>
-
-
-        </GridLayout>
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
