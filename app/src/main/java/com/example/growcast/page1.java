@@ -2,8 +2,10 @@ package com.example.growcast;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,6 +22,8 @@ public class page1 extends AppCompatActivity {
         setContentView(R.layout.page1);
         account= (Toolbar) findViewById(R.id.account);
         uName=getIntent().getStringExtra("user");
+        Log.i("Uname",uName);
+        Toast.makeText(this, uName, Toast.LENGTH_SHORT).show();
 
     }
 
