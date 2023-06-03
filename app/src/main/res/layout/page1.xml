@@ -6,19 +6,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/appbg4"
     android:orientation="vertical"
-    tools:context=".page1"
-    >
+    tools:context=".page1">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="35dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.957"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -67,64 +57,19 @@
 
     <ImageButton
         android:id="@+id/button3"
+        android:onClick="fruit"
         android:layout_width="162dp"
         android:layout_height="51dp"
         android:background="@drawable/fruitb"
-        android:onClick="fruit"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.39" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/shop"
-        android:onClick="shop"
 
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@drawable/toolbg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:logo="@drawable/shopbag"
-        app:title="Shop"
-        app:titleTextColor="@color/white" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/plant"
-        android:onClick="plant"
-
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:background="@drawable/toolbgl"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:logo="@drawable/leaf" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/account"
-        android:onClick="account"
-
-        android:layout_width="55dp"
-        android:layout_height="50dp"
-        android:background="@drawable/toolbgr"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:logo="@drawable/account" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -161,5 +106,59 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.416"
         app:srcCompat="@drawable/vegeicon" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/note"
+        android:onClick="note"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/toolbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:logo="@drawable/addnote"
+        app:title="Note"
+        app:titleTextColor="@color/white" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/weather"
+        android:onClick="weather"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:background="@drawable/toolbgl"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:logo="@drawable/sun" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/account"
+        android:onClick="account"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:background="@drawable/toolbgr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:logo="@drawable/account" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

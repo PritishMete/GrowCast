@@ -71,7 +71,9 @@ public class login extends AppCompatActivity {
 
     }
     private void loginUserAccount(final String email,final String password)
+
     {
+
         // validations for input email and password
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(),

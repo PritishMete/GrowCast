@@ -9,10 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class fruitscroll extends AppCompatActivity {
+    private Toolbar account;
+    private String uName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fruitscroll);
+        account= (Toolbar) findViewById(R.id.account);
+        uName=getIntent().getStringExtra("user");
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -38,6 +42,8 @@ public class fruitscroll extends AppCompatActivity {
 
 
         Intent intent=new Intent(this,user.class);
+        intent.putExtra("user",uName);
+
         startActivity(intent);
     }
     public void weather(View v){

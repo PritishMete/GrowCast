@@ -27,7 +27,7 @@ public class user extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView dp;
     private Uri mImageUri;
-    private TextView UserName; //todo username ta ekhne variable niiyechi eta try korchilam nije age ekbr seta test.java te kora ache
+    private TextView UserName;
     private ViewStub signup;
     private TextView mail;
     private String uName;
@@ -51,7 +51,6 @@ public class user extends AppCompatActivity {
         reference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                System.out.println(uName);
                 String name=snapshot.child(uName).child("userName").getValue(String.class);
                 UserName.setText(name);
             }
@@ -69,6 +68,8 @@ public class user extends AppCompatActivity {
 
             }
         });
+        finish();
+
     }
     private String extractUsernameFromEmail(String email) {
         int atIndex = email.indexOf('@');
@@ -100,9 +101,11 @@ public class user extends AppCompatActivity {
 
         Intent intent=new Intent(this,login.class);
         startActivity(intent);
+        finish();
 
 
     }
 }
+
 
 

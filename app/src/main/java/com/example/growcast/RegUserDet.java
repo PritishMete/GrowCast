@@ -3,7 +3,7 @@ package com.example.growcast;
 public class RegUserDet {
     private String userName,mail,phoneNumber,pass;
 
-    public RegUserDet(String userName, String mail, String phoneNumber, String pass) {
+    public RegUserDet(String userName, String mail, String phoneNumber) {
         this.userName = userName;
         this.mail = mail;
         this.phoneNumber = phoneNumber;

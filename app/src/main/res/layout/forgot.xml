@@ -29,12 +29,12 @@
         app:layout_constraintVertical_bias="0.244"
         app:srcCompat="@drawable/userid" />
     <EditText
-        android:id="@+id/fid"
+        android:id="@+id/mail"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
         android:ems="10"
-        android:hint="Enter EmailAddress/PhoneNumber"
+        android:hint="Enter Registered EmailAddress"
         android:inputType="text"
         android:padding="15dp"
         android:textColor="@color/white"
@@ -47,38 +47,22 @@
         app:layout_constraintVertical_bias="0.45"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter the otp that has been sent "
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#FC660F"
+        android:text="reset password"
         android:textColor="@color/white"
-        android:textSize="15dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
-
-    <EditText
-        android:id="@+id/otp"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:ems="10"
-        android:hint="____   ____    ____    ____ "
-        android:paddingLeft="50dp"
-        android:inputType="text"
-        android:padding="15dp"
-
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634" />
+        app:layout_constraintVertical_bias="0.624" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

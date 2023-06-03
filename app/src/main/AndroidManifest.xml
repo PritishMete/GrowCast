@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -35,6 +37,21 @@
         <activity android:name=".fruitscroll" />
         <activity android:name=".vegscroll" />
         <activity android:name=".weather" />
+        <activity android:name=".ashoka" />
+        <activity android:name=".bluebell" />
+        <activity android:name=".cactus" />
+        <activity android:name=".calendula" />
+        <activity android:name=".dahlia" />
+        <activity android:name=".frangipani" />
+        <activity android:name=".hibiscus" />
+        <activity android:name=".jasmine" />
+        <activity android:name=".lily" />
+        <activity android:name=".mangolia" />
+        <activity android:name=".marigold" />
+        <activity android:name=".orchid" />
+        <activity android:name=".rose" />
+        <activity android:name=".sunflower" />
+        <activity android:name=".tulip" />
 
 
     </application>

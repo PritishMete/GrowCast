@@ -167,10 +167,9 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/back"
-        android:onClick="back"
         android:layout_width="100dp"
         android:layout_height="47dp"
-        android:background="@drawable/backbt"
+        android:background="@drawable/backbtveg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -192,7 +191,6 @@
 
     <TextView
         android:id="@+id/textView"
-        android:onClick="back"
         android:layout_width="150dp"
         android:layout_height="47dp"
         android:background="@drawable/buttonbg"

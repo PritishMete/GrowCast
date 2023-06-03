@@ -30,16 +30,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.172" />
 
+
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/logintxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <EditText
         android:id="@+id/name"
@@ -57,7 +58,7 @@
         app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintVertical_bias="0.337" />
 
     <ImageView
         android:layout_width="30dp"
@@ -65,10 +66,10 @@
         android:src="@drawable/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.406" />
+        app:layout_constraintVertical_bias="0.447" />
 
     <EditText
         android:id="@+id/mail"
@@ -86,38 +87,7 @@
         app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/call"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        tools:ignore="DuplicateIds" />
-
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="305dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/design"
-        android:hint="Enter your phone"
-        android:inputType="phone"
-        android:padding="15dp"
-        android:textColor="@color/white"
-        android:textColorHint="#BEBEBE"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.442" />
 
     <ImageView
         android:layout_width="30dp"
@@ -125,10 +95,10 @@
         android:src="@drawable/locktxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintVertical_bias="0.651" />
 
     <EditText
         android:id="@+id/pass"
@@ -136,7 +106,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/design"
         android:hint="Enter password*"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="#BEBEBE"
@@ -146,7 +116,7 @@
         app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.543" />
 
     <ImageView
         android:layout_width="30dp"
@@ -154,10 +124,10 @@
         android:src="@drawable/locktxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589" />
+        app:layout_constraintVertical_bias="0.542" />
 
     <EditText
         android:id="@+id/repass"
@@ -165,7 +135,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/design"
         android:hint="Retype password*"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:padding="15dp"
         android:textColor="@color/white"
         android:textColorHint="#BEBEBE"
@@ -175,7 +145,7 @@
         app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintVertical_bias="0.653" />
 
     <Button
         android:id="@+id/sgn"
