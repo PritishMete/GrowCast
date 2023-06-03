@@ -99,8 +99,8 @@ public class login extends AppCompatActivity {
                                     @NonNull Task<AuthResult> task)
                             {
                                 if (task.isSuccessful()) {
-                                    FirebaseUser user=auth.getCurrentUser();
-                                    String uid=user.getUid();
+                                     String uid=auth.getCurrentUser().getUid();
+
                                     Toast.makeText(getApplicationContext(),
                                                     "Login successful!!",
                                                     Toast.LENGTH_LONG)

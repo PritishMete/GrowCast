@@ -2,10 +2,8 @@ package com.example.growcast;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -22,7 +20,6 @@ public class page1 extends AppCompatActivity {
         setContentView(R.layout.page1);
         account= (Toolbar) findViewById(R.id.account);
         uName=getIntent().getStringExtra("user");
-        Log.e("hello",uName);
 
     }
 
@@ -32,11 +29,13 @@ public class page1 extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
     public void account(View v){
+
+
         Intent intent=new Intent(page1.this,user.class);
         intent.putExtra("user",uName);
         startActivity(intent);
     }
-    public void note(View v){
+    public void shop(View v){
 
 
         Intent intent=new Intent(page1.this,shop.class);
@@ -61,7 +60,7 @@ public class page1 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void weather(View v){
+    public void plant(View v){
 
 
         Intent intent=new Intent(page1.this, weather.class);
