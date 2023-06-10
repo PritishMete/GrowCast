@@ -20,8 +20,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 public class signup extends AppCompatActivity {
-    private EditText name,mail,phone,pass,repass;
+    private EditText name, mail, pass, repass;
     private Button sign;
 
     private DatabaseReference reference;
@@ -32,26 +33,25 @@ public class signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-         init();
+        init();
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                final String userName=name.getText().toString(); //todo ekhne username ta acche eta user page username er jaygay show korate hbe
-                final String email=mail.getText().toString();
-                final String phoneNumber=phone.getText().toString();
-                final String password=pass.getText().toString();
-                final String repeatPass=repass.getText().toString();
-                if(userName.isEmpty() || email.isEmpty() || phoneNumber.isEmpty() || password.isEmpty() || repeatPass.isEmpty()){
+                final String userName = name.getText().toString(); //todo ekhne username ta acche eta user page username er jaygay show korate hbe
+                final String email = mail.getText().toString();
+                final String password = pass.getText().toString();
+                final String repeatPass = repass.getText().toString();
+                if (userName.isEmpty() || email.isEmpty() || password.isEmpty() || repeatPass.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Fill up the page", Toast.LENGTH_SHORT).show();
-                    return ;
+                    return;
                 }
-                if(!password.equals(repeatPass)){
+                if (!password.equals(repeatPass)) {
                     Toast.makeText(getApplicationContext(), "password meleni khankir chele", Toast.LENGTH_SHORT).show();
-                    return ;
+                    return;
                 }
-            reference.push().setValue(new RegUserDet(userName,email.replace(".",""),phoneNumber,password));
-            registerNewUser(email,password);
+
+                registerNewUser(email, password, userName);
                 reference.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -85,19 +85,19 @@ public class signup extends AppCompatActivity {
 
         });
     }
-    private void init(){
-        name= (EditText) findViewById(R.id.name);
-        mail= (EditText) findViewById(R.id.mail);
-        phone= (EditText) findViewById(R.id.phone);
-        pass= (EditText) findViewById(R.id.pass);
-        repass= (EditText) findViewById(R.id.repass);
-        sign= (Button) findViewById(R.id.sgn);
-        reference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://growcast-36424-default-rtdb.firebaseio.com/")
+
+    private void init() {
+        name = (EditText) findViewById(R.id.name);
+        mail = (EditText) findViewById(R.id.mail);
+        pass = (EditText) findViewById(R.id.pass);
+        repass = (EditText) findViewById(R.id.repass);
+        sign = (Button) findViewById(R.id.sgn);
+        reference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://growcast-678b1-default-rtdb.firebaseio.com/")
                 .child("Users");
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
     }
-    private void registerNewUser(final String email,final String password)
-    {
+
+    private void registerNewUser(final String email, final String password, final String userName) {
 
 
         // create new user or register new user
@@ -106,15 +106,14 @@ public class signup extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task)
-                    {
+                    public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(),
                                             "Registration successful!",
                                             Toast.LENGTH_LONG)
                                     .show();
-                        }
-                        else {
+                            reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new RegUserDet(userName, email.replace(".", ""), password));
+                        } else {
 
                             // Registration failed
                             Toast.makeText(

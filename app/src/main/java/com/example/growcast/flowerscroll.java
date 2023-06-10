@@ -8,6 +8,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class flowerscroll extends AppCompatActivity {
     private Toolbar account;
     private String uName;
@@ -16,7 +18,7 @@ public class flowerscroll extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flowerscroll);
         account= (Toolbar) findViewById(R.id.account);
-        uName=getIntent().getStringExtra("user");
+        uName= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

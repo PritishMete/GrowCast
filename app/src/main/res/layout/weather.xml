@@ -39,57 +39,35 @@
         android:padding="16dp" />
 
     <TextView
-        android:id="@+id/highTempTextView"
+        android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="High: "
+        android:text="Description"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/lowTempTextView"
+        app:layout_constraintEnd_toEndOf="parent"
         android:padding="8dp" />
 
     <TextView
-        android:id="@+id/lowTempTextView"
+        android:id="@+id/feelsLikeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Low: "
+        android:text="Feels Like"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
-        app:layout_constraintStart_toEndOf="@id/highTempTextView"
-        app:layout_constraintEnd_toStartOf="@id/uvIndexTextView"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/uvIndexTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="UV Index: "
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
-        app:layout_constraintStart_toEndOf="@id/lowTempTextView"
-        app:layout_constraintEnd_toStartOf="@id/airSpeedTextView"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/airSpeedTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Air Speed: "
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
-        app:layout_constraintStart_toEndOf="@id/uvIndexTextView"
-        app:layout_constraintEnd_toStartOf="@id/humidityTextView"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:padding="8dp" />
 
     <TextView
         android:id="@+id/humidityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Humidity: "
+        android:text="Humidity"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
-        app:layout_constraintStart_toEndOf="@id/airSpeedTextView"
+        app:layout_constraintTop_toBottomOf="@id/feelsLikeTextView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="8dp" />
 
@@ -100,52 +78,30 @@
         android:layout_height="wrap_content"
         android:text="---"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/highTempTextView"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
         app:layout_constraintStart_toEndOf="@id/temperatureTextView"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="8dp" />
 
     <TextView
-        android:id="@+id/highTempValueTextView"
+        android:id="@+id/descriptionValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="---"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/lowTempTextView"
-        app:layout_constraintStart_toEndOf="@id/highTempTextView"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
+        app:layout_constraintStart_toEndOf="@id/descriptionTextView"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="8dp" />
 
     <TextView
-        android:id="@+id/lowTempValueTextView"
+        android:id="@+id/feelsLikeValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="---"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/uvIndexTextView"
-        app:layout_constraintStart_toEndOf="@id/lowTempTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/uvIndexValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="---"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/airSpeedTextView"
-        app:layout_constraintStart_toEndOf="@id/uvIndexTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp" />
-
-    <TextView
-        android:id="@+id/airSpeedValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="---"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/humidityTextView"
-        app:layout_constraintStart_toEndOf="@id/airSpeedTextView"
+        app:layout_constraintTop_toBottomOf="@id/feelsLikeTextView"
+        app:layout_constraintStart_toEndOf="@id/feelsLikeTextView"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="8dp" />
 

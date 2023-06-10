@@ -1,42 +1,33 @@
 {
   "project_info": {
-    "project_number": "146031030965",
-    "firebase_url": "https://growcast-36424-default-rtdb.firebaseio.com",
-    "project_id": "growcast-36424",
-    "storage_bucket": "growcast-36424.appspot.com"
+    "project_number": "1075537411436",
+    "project_id": "growcast-678b1",
+    "storage_bucket": "growcast-678b1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:146031030965:android:0444d7bcd2c0dc34b644fc",
+        "mobilesdk_app_id": "1:1075537411436:android:c7e26129f450d010f40749",
         "android_client_info": {
           "package_name": "com.example.growcast"
         }
       },
       "oauth_client": [
         {
-          "client_id": "146031030965-ioqlrer8bddt741l8ihiho12jp7ca0bg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.growcast",
-            "certificate_hash": "622e30c6b9b4d718c406a49a63b941aae883b669"
-          }
-        },
-        {
-          "client_id": "146031030965-qprmkve57qj8k9kft842jj1vvddj26ie.apps.googleusercontent.com",
+          "client_id": "1075537411436-tft5v891pp868b3m483l7u3hm74hoi74.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCyV0s4MZ3nVgPzydOw61CUFV0Qa6uw6xo"
+          "current_key": "AIzaSyAsalJhS99zK4Fk79KmdIVML3MGAIj4I6c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "146031030965-76uj4sddi962glokhbdtnsftag2j0kmc.apps.googleusercontent.com",
+              "client_id": "1075537411436-tft5v891pp868b3m483l7u3hm74hoi74.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

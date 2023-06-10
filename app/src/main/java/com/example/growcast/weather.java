@@ -33,10 +33,9 @@ public class weather extends AppCompatActivity implements LoaderManager.LoaderCa
     private static final String API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?q=city_name_here&appid=" + API_KEY;
 
     private TextView temperatureValueTextView;
-    private TextView highTempValueTextView;
-    private TextView lowTempValueTextView;
-    private TextView uvIndexValueTextView;
-    private TextView airSpeedValueTextView;
+    private TextView descriptionValueTextView;
+    private TextView feelsLikeValueTextView;
+
     private TextView humidityValueTextView;
 
     @Override
@@ -51,12 +50,11 @@ public class weather extends AppCompatActivity implements LoaderManager.LoaderCa
     private void init() {
         // Initialize TextViews
         temperatureValueTextView = findViewById(R.id.temperatureValueTextView);
-        highTempValueTextView = findViewById(R.id.highTempValueTextView);
-        lowTempValueTextView = findViewById(R.id.lowTempValueTextView);
-        uvIndexValueTextView = findViewById(R.id.uvIndexValueTextView);
-        airSpeedValueTextView = findViewById(R.id.airSpeedValueTextView);
+        descriptionValueTextView = findViewById(R.id.descriptionValueTextView);
+        feelsLikeValueTextView = findViewById(R.id.feelsLikeValueTextView);
         humidityValueTextView = findViewById(R.id.humidityValueTextView);
     }
+
 
     @NonNull
     @Override
@@ -67,8 +65,17 @@ public class weather extends AppCompatActivity implements LoaderManager.LoaderCa
 
     @Override
     public void onLoadFinished(@NonNull Loader<WeatherItem> loader, WeatherItem data) {
-        Toast.makeText(this, data.getTemperature() + " " + data.getHumidity(), Toast.LENGTH_SHORT).show();
+        // Set temperature value to temperatureValueTextView
+
+        temperatureValueTextView.setText(String.valueOf(data.getTemperature()));
+        humidityValueTextView.setText(String.valueOf(data.getHumidity()));
+        descriptionValueTextView.setText(String.valueOf(data.getDescription()));
+        feelsLikeValueTextView.setText(String.valueOf(data.getFeels()));
+
+        // Display a toast message with temperature and humidity
+        Toast.makeText(this, data.getTemperature() + " " + data.getHumidity() + " " +data.getDescription() + " " + data.getFeels(), Toast.LENGTH_SHORT).show();
     }
+
 
     @Override
     public void onLoaderReset(@NonNull Loader<WeatherItem> loader) {

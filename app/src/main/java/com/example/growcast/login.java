@@ -1,12 +1,14 @@
 package com.example.growcast;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,11 +26,12 @@ import com.google.firebase.database.FirebaseDatabase;
 public class login extends AppCompatActivity {
 
     private EditText user, pass;
-    private Button login,signup,forgot;
+    private Button login, signup, forgot;
+    private CheckBox rememberCheckBox;
 
     private DatabaseReference reference;
     private FirebaseAuth auth;
-
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,45 +39,54 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.login);
         init();
 
+        boolean rememberDevice = sharedPreferences.getBoolean("rememberDevice", false);
 
+        if (rememberDevice) {
+            // User has chosen to remember the device, directly open page1
+            FirebaseUser currentUser = auth.getCurrentUser();
+            if (currentUser != null) {
+                Intent intent = new Intent(login.this, page1.class);
+                intent.putExtra("user", currentUser.getUid());
+                startActivity(intent);
+                finish();
+            }
+        }
     }
-    private void init(){
-        user= (EditText) findViewById(R.id.user);
-        pass= (EditText) findViewById(R.id.pass);
-        forgot= (Button) findViewById(R.id.forgot);
-        signup= (Button) findViewById(R.id.signup);
-        login= (Button) findViewById(R.id.login);
-        reference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://growcast-36424-default-rtdb.firebaseio.com/").child("Users");
-        auth=FirebaseAuth.getInstance();
+
+    private void init() {
+        user = findViewById(R.id.user);
+        pass = findViewById(R.id.pass);
+        forgot = findViewById(R.id.forgot);
+        signup = findViewById(R.id.signup);
+        login = findViewById(R.id.login);
+        rememberCheckBox = findViewById(R.id.rememberCheckBox);
+        reference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://growcast-678b1-default-rtdb.firebaseio.com/").child("Users");
+        auth = FirebaseAuth.getInstance();
+        sharedPreferences = getSharedPreferences("loginPreferences", MODE_PRIVATE);
     }
-    public  void performRegistration(View v){
-        System.out.println("Is error?");
-        Intent intent=new Intent(this,signup.class);
+
+    public void performRegistration(View v) {
+        Intent intent = new Intent(this, signup.class);
         startActivity(intent);
-
     }
-    public void forgot(View v){
 
-        Intent intent=new Intent(this,forgot.class);
+    public void forgot(View v) {
+        Intent intent = new Intent(this, forgot.class);
         startActivity(intent);
-
-
     }
-    public void login(View v){
-        final String u=user.getText().toString().trim();
-        final String p=pass.getText().toString().trim();
+
+    public void login(View v) {
+        final String u = user.getText().toString().trim();
+        final String p = pass.getText().toString().trim();
 
         View view = findViewById(R.id.a);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.vanish);
         view.startAnimation(animation);
-        loginUserAccount(u,p);
-
+        loginUserAccount(u, p);
     }
-    private void loginUserAccount(final String email,final String password)
 
-    {
-
-        // validations for input email and password
+    private void loginUserAccount(final String email, final String password) {
+        // Validations for input email and password
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(),
                             "Please enter email!!",
@@ -92,38 +104,43 @@ public class login extends AppCompatActivity {
         }
 
         auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(
-                        new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(
-                                    @NonNull Task<AuthResult> task)
-                            {
-                                if (task.isSuccessful()) {
-                                     String uid=auth.getCurrentUser().getUid();
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            String uid = auth.getCurrentUser().getUid();
 
-                                    Toast.makeText(getApplicationContext(),
-                                                    "Login successful!!",
-                                                    Toast.LENGTH_LONG)
-                                            .show();
-                                    // if sign-in is successful
-                                    // intent to home activity
-                                    Intent intent=new Intent(login.this,page1.class);
-                                    intent.putExtra("user",uid);
-                                    startActivity(intent);
-                                    finish();
-                                }
-
-                                else {
-
-                                    // sign-in failed
-                                    Toast.makeText(getApplicationContext(),
-                                                    "Login failed!!",
-                                                    Toast.LENGTH_LONG)
-                                            .show();
-                                }
+                            if (rememberCheckBox.isChecked()) {
+                                // Save the login preferences if Remember Device is checked
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean("rememberDevice", true);
+                                editor.apply();
+                            } else {
+                                // Clear the login preferences if Remember Device is unchecked
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean("rememberDevice", false);
+                                editor.clear();
+                                editor.apply();
                             }
-                        });
+
+                            Toast.makeText(getApplicationContext(),
+                                            "Login successful!!",
+                                            Toast.LENGTH_LONG)
+                                    .show();
+
+                            // If sign-in is successful, intent to home activity
+                            Intent intent = new Intent(login.this, page1.class);
+                            intent.putExtra("user", uid);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            // Sign-in failed
+                            Toast.makeText(getApplicationContext(),
+                                            "Login failed!!",
+                                            Toast.LENGTH_LONG)
+                                    .show();
+                        }
+                    }
+                });
     }
-
 }
-

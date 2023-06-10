@@ -8,6 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class page1 extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class page1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page1);
         account= (Toolbar) findViewById(R.id.account);
-        uName=getIntent().getStringExtra("user");
+        uName= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
     }
 
@@ -35,10 +36,10 @@ public class page1 extends AppCompatActivity {
         intent.putExtra("user",uName);
         startActivity(intent);
     }
-    public void shop(View v){
+    public void note(View v){
 
 
-        Intent intent=new Intent(page1.this,shop.class);
+        Intent intent=new Intent(page1.this,note.class);
         startActivity(intent);
     }
     public void flower(View v){
@@ -60,10 +61,13 @@ public class page1 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void plant(View v){
+
+    public void weather(View v) {
 
 
-        Intent intent=new Intent(page1.this, weather.class);
+        // Continue with your existing code for starting the weather activity
+        Intent intent = new Intent(page1.this, weather.class);
         startActivity(intent);
     }
+
 }

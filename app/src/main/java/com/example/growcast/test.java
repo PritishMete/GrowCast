@@ -1,116 +1,112 @@
 //package com.example.growcast;
 //
-//import android.os.AsyncTask;
+//import android.annotation.SuppressLint;
+//import android.content.Intent;
+//import android.net.Uri;
 //import android.os.Bundle;
-//import android.util.Log;
+//import android.view.View;
+//import android.view.ViewStub;
+//import android.widget.Button;
+//import android.widget.ImageView;
 //import android.widget.TextView;
+//import android.widget.Toast;
 //
+//import androidx.annotation.NonNull;
 //import androidx.appcompat.app.AppCompatActivity;
 //
-//import com.google.android.gms.location.LocationServices;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.ValueEventListener;
+//import com.squareup.picasso.Picasso;
 //
-//import org.json.JSONException;
-//import org.json.JSONObject;
 //
-//import java.io.BufferedReader;
-//import java.io.IOException;
-//import java.io.InputStream;
-//import java.io.InputStreamReader;
-//import java.net.HttpURLConnection;
-//import java.net.URL;
 //
-//public class weather extends AppCompatActivity {
+//public class user extends AppCompatActivity {
+//    private Button back,logout,upload;
+//    private static final int PICK_IMAGE_REQUEST = 1;
+//    private ImageView dp;
+//    private Uri mImageUri;
+//    private TextView UserName;
+//    private ViewStub signup;
+//    private TextView mail;
+//    private String uName;
+//    private DatabaseReference reference=FirebaseDatabase.getInstance().getReferenceFromUrl("https://growcast-678b1-default-rtdb.firebaseio.com/").child("Users");
+//    private FirebaseAuth auth=FirebaseAuth.getInstance();
 //
-//    // API Key for OpenWeatherMap
-//    private static final String API_KEY = "2469624757d5e8e00ee047890b315187";
-//
-//    // API Endpoint for weather data
-//    private static final String API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?q=city_name_here&appid=" + API_KEY;
-//
-//    private TextView temperatureValueTextView;
-//    private TextView highTempValueTextView;
-//    private TextView lowTempValueTextView;
-//    private TextView uvIndexValueTextView;
-//    private TextView airSpeedValueTextView;
-//    private TextView humidityValueTextView;
-//
+//    @SuppressLint("MissingInflatedId")
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.weather);
+//        setContentView(R.layout.user);
+//        uName=getIntent().getStringExtra("user");
 //
-//        // Initialize TextViews
-//        temperatureValueTextView = findViewById(R.id.temperatureValueTextView);
-//        highTempValueTextView = findViewById(R.id.highTempValueTextView);
-//        lowTempValueTextView = findViewById(R.id.lowTempValueTextView);
-//        uvIndexValueTextView = findViewById(R.id.uvIndexValueTextView);
-//        airSpeedValueTextView = findViewById(R.id.airSpeedValueTextView);
-//        humidityValueTextView = findViewById(R.id.humidityValueTextView);
+//        upload = findViewById(R.id.upload);
+//        dp = findViewById(R.id.dp);
+//        back= (Button) findViewById(R.id.back);
+//        logout= (Button) findViewById(R.id.logout);
+//        UserName= (TextView) findViewById(R.id.userName);
 //
-//        // Fetch weather data
-//        WeatherAsyncTask weatherAsyncTask = new WeatherAsyncTask();
-//        weatherAsyncTask.execute();
+//
+//        reference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                String name=snapshot.child(uName).child("userName").getValue(String.class);
+//                UserName.setText(name);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//
+//        upload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openFileChooser();
+//
+//            }
+//        });
+//
+//    }
+//    private String extractUsernameFromEmail(String email) {
+//        int atIndex = email.indexOf('@');
+//        if (atIndex != -1) {
+//            return email.substring(0, atIndex);
+//        } else {
+//            return null;
+//        }
+//    }
+//    private void openFileChooser() {
+//        Intent intent = new Intent();
+//        intent.setType("image/*");
+//        intent.setAction(Intent.ACTION_GET_CONTENT);
+//        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+//    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+//            mImageUri = data.getData();
+//            Picasso.get().load(mImageUri).into(dp); // or you can use any other image loading library to display the image in the ImageView
+//        }
 //    }
 //
-//    private class WeatherAsyncTask extends AsyncTask<Void, Void, String> {
 //
-//        @Override
-//        protected String doInBackground(Void... voids) {
-//            String result = "";
+//    public void logout(View v){
 //
-//            try {
-//                // Create URL object with the API endpoint
-//                URL url = new URL(API_ENDPOINT.replace("city_name_here", "your_city_name_here"));
 //
-//                // Create HttpURLConnection object and establish connection
-//                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//                connection.setRequestMethod("GET");
+//        Intent intent=new Intent(this,login.class);
+//        startActivity(intent);
+//        finish();
 //
-//                // Read the response
-//                InputStream inputStream = connection.getInputStream();
-//                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//                String line;
-//                while ((line = bufferedReader.readLine()) != null) {
-//                    result += line;
-//                }
 //
-//                // Close the streams and disconnect the connection
-//                bufferedReader.close();
-//                inputStream.close();
-//                connection.disconnect();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            return result;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String result) {
-//            super.onPostExecute(result);
-//
-//            try {
-//                // Parse the JSON response
-//                JSONObject jsonObject = new JSONObject(result);
-//
-//                // Extract the weather data
-//                double temperature = jsonObject.getJSONObject("main").getDouble("temp");
-//                double highTemp = jsonObject.getJSONObject("main").getDouble("temp_max");
-//                double lowTemp = jsonObject.getJSONObject("main").getDouble("temp_min");
-//                double uvIndex = jsonObject.getDouble("uv_index");
-//                double airSpeed = jsonObject.getJSONObject("wind").getDouble("speed");
-//                int humidity = jsonObject.getJSONObject("main").getInt("humidity");
-//
-//                // Update the TextViews with the fetched values
-//                temperatureValueTextView.setText(String.valueOf(temperature));
-//                highTempValueTextView.setText(String.valueOf(highTemp));
-//                lowTempValueTextView.setText(String.valueOf(lowTemp));
-//                uvIndexValueTextView.setText(String.valueOf(uvIndex));
-//                airSpeedValueTextView.setText(String.valueOf(airSpeed));
-//                humidityValueTextView.setText(String.valueOf(humidity));
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
 //    }
 //}
+//
+//
+//
