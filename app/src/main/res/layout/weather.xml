@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".weather">
 
@@ -12,72 +13,99 @@
         android:layout_height="wrap_content"
         android:text="City"
         android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/cityname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="cityname"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cityTextView" />
 
     <ImageView
         android:id="@+id/weatherImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/sun"
-        app:layout_constraintTop_toBottomOf="@id/cityTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="36dp"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp" />
+        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cityname"
+        app:srcCompat="@drawable/sun" />
 
     <TextView
         android:id="@+id/temperatureTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:padding="16dp"
         android:text="Temperature"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@id/weatherImageView"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp" />
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weatherImageView" />
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:padding="8dp"
         android:text="Description"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp" />
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTextView" />
 
     <TextView
         android:id="@+id/feelsLikeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:padding="8dp"
         android:text="Feels Like"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp" />
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView" />
 
     <TextView
         android:id="@+id/humidityTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:padding="8dp"
         android:text="Humidity"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/feelsLikeTextView"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp" />
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feelsLikeTextView" />
 
-    <!-- TextViews to display the values -->
     <TextView
         android:id="@+id/temperatureValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="---"
         android:textSize="18sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
         app:layout_constraintStart_toEndOf="@id/temperatureTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +117,7 @@
         android:layout_height="wrap_content"
         android:text="---"
         android:textSize="18sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
         app:layout_constraintStart_toEndOf="@id/descriptionTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,6 +129,7 @@
         android:layout_height="wrap_content"
         android:text="---"
         android:textSize="18sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/feelsLikeTextView"
         app:layout_constraintStart_toEndOf="@id/feelsLikeTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,6 +141,7 @@
         android:layout_height="wrap_content"
         android:text="---"
         android:textSize="18sp"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@id/humidityTextView"
         app:layout_constraintStart_toEndOf="@id/humidityTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,11 +151,11 @@
         android:id="@+id/refreshButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="48dp"
         android:padding="16dp"
         android:text="Refresh"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/humidityValueTextView" />
 

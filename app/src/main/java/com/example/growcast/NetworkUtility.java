@@ -1,5 +1,4 @@
 package com.example.growcast;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.text.DecimalFormat;
 
 public class NetworkUtility {
     private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -18,20 +18,22 @@ public class NetworkUtility {
 
     public static WeatherItem createHttpRequest(final String cityName) {
 
-        URL url = createURL(BASE_URL + cityName + "&appid=" + API_KEY);//URL object created
+        URL url = createURL(BASE_URL + cityName + "&appid=" + API_KEY); //URL object created
         String json = null;
         try {
             if (url != null) {
-                //incase of valid URL object , connection establishment phase is started
+                // If there is a valid URL object, start the connection establishment phase
                 json = setUpConnection(url);
-            } else
+            } else {
                 return null;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (json == null || json.isEmpty())
+        if (json == null || json.isEmpty()) {
             return null;
-        //in case of valid JSON scrap data is called which is used to fetch nedded data from the JSON data
+        }
+        // If there is a valid JSON, extract the needed data using the scrapData method
         return scrapData(json);
     }
 
@@ -48,15 +50,15 @@ public class NetworkUtility {
         HttpURLConnection urlConnection = null;
         InputStream inputStream = null;
         try {
-            //connection establishment phase
+            // Connection establishment phase
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.setDoInput(true);
             urlConnection.connect();
             if (urlConnection.getResponseCode() == 200) {
-                //in case of successfull connection input stream is obtained and readInputStream method is called to read the raw data
+                // If the connection is successful, obtain the input stream and call the readInputStream method to read the raw data
                 inputStream = urlConnection.getInputStream();
-                return readInputStream(inputStream);//returns string
+                return readInputStream(inputStream); // Returns the string
             }
 
         } catch (IOException e) {
@@ -72,7 +74,7 @@ public class NetworkUtility {
 
 
     private static String readInputStream(InputStream inputStream) throws IOException {
-        //raw data is read here
+        // Read the raw data here
         StringBuilder builder = new StringBuilder();
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
         String line = br.readLine();
@@ -84,20 +86,28 @@ public class NetworkUtility {
         return builder.toString();
     }
 
+
+// ...
+
     private static WeatherItem scrapData(final String json) {
         try {
-            JSONObject rootObject;
-            rootObject = new JSONObject(json);
+            JSONObject rootObject = new JSONObject(json);
             String description = rootObject.optJSONArray("weather").optJSONObject(0).optString("description");
             JSONObject jsonObject = rootObject.optJSONObject("main");
-            double temperature = jsonObject.optDouble("temp");
-            double feels = jsonObject.optDouble("feels_like");
+            double temperature = jsonObject.optDouble("temp") - 273.15; // Convert temperature from Kelvin to Celsius
+            double feels = jsonObject.optDouble("feels_like") - 273.15; // Convert temperature from Kelvin to Celsius
             double humidity = jsonObject.optDouble("humidity");
-            return new WeatherItem(description, temperature, feels, humidity);
+
+            DecimalFormat decimalFormat = new DecimalFormat("#"); // Format without decimal places
+            int roundedTemperature = Integer.parseInt(decimalFormat.format(temperature));
+            int roundedFeels = Integer.parseInt(decimalFormat.format(feels));
+
+            return new WeatherItem(description, roundedTemperature, roundedFeels, humidity);
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return null;
     }
+
 
 }

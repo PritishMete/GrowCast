@@ -1,12 +1,12 @@
 package com.example.growcast;
 
 public class RegUserDet {
-    private String userName,mail,phoneNumber;
+    private String userName,mail,pass;
 
-    public RegUserDet(String userName, String mail, String phoneNumber) {
+    public RegUserDet(String userName, String mail, String pass) {
         this.userName = userName;
         this.mail = mail;
-        this.phoneNumber = phoneNumber;
+        this.pass = pass;
     }
 
     public String getUserName() {
@@ -25,12 +25,12 @@ public class RegUserDet {
         this.mail = mail;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPass(String phoneNumber) {
+        this.pass = phoneNumber;
     }
 
 }

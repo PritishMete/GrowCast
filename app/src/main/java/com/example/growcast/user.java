@@ -53,7 +53,7 @@ public class user extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 String name = snapshot.child("userName").getValue(String.class);
-                Toast.makeText(user.this, "fuck"+name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(user.this, "fuck"+" "+name, Toast.LENGTH_SHORT).show();
                UserName.setText(name);
             }
 

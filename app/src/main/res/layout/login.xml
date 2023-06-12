@@ -26,6 +26,7 @@
         app:layout_constraintVertical_bias="0.147" />
 
     <ImageView
+        android:id="@+id/imageView8"
         android:layout_width="143dp"
         android:layout_height="119dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,6 +97,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.581" />
 
+
     <Button
         android:id="@+id/forgot"
         android:layout_width="185dp"
@@ -105,15 +107,13 @@
         android:text="Forgot password?"
         android:textAllCaps="false"
         android:textColor="@color/teal_200"
-        android:textStyle="bold"
         android:textSize="14dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
-
+        app:layout_constraintVertical_bias="0.783" />
 
     <Button
         android:id="@+id/login"
@@ -122,15 +122,15 @@
         android:backgroundTint="#FC660F"
         android:onClick="login"
         android:text="login"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <Button
         android:id="@+id/signup"
@@ -146,10 +146,21 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintVertical_bias="0.322" />
+
+    <CheckBox
+        android:id="@+id/rememberCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.646" />
 
     <TextView
         android:id="@+id/rememberDeviceText"
@@ -160,21 +171,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rememberCheckBox"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass"
-        app:layout_constraintVertical_bias="0.097" />
-
-    <CheckBox
-        android:id="@+id/rememberCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        app:layout_constraintBottom_toBottomOf="@+id/rememberDeviceText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toEndOf="@+id/rememberDeviceText"
-        app:layout_constraintTop_toTopOf="@+id/rememberDeviceText"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
