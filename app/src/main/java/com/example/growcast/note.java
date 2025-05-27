@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 
 public class note extends AppCompatActivity {
@@ -72,31 +74,34 @@ public class note extends AppCompatActivity {
 
     }
 
-    void saveNoteToFirebase(noteItem note){
-        DocumentReference documentReference;
-        if(isEditMode){
-            //update the note
-            documentReference = utility.getCollectionReferenceForNotes().document(docId);
-        }else{
-            //create new note
-            documentReference = utility.getCollectionReferenceForNotes().document();
+    void saveNoteToFirebase(noteItem note) {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser == null) {
+            // User is not authenticated, handle the case as desired
+            return;
         }
 
-
+        DocumentReference documentReference;
+        if (isEditMode) {
+            // Update the note
+            documentReference = utility.getCollectionReferenceForNotes().document(docId);
+        } else {
+            // Create a new note
+            documentReference = utility.getCollectionReferenceForNotes().document();
+        }
 
         documentReference.set(note).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    //note is added
-                    utility.showToast(note.this,"Note added successfully");
+                if (task.isSuccessful()) {
+                    // Note is added
+                    utility.showToast(note.this, "Note added successfully");
                     finish();
-                }else{
-                    utility.showToast(note.this,"Failed while adding note");
+                } else {
+                    utility.showToast(note.this, "Failed while adding note");
                 }
             }
         });
-
     }
 
     void deleteNoteFromFirebase(){

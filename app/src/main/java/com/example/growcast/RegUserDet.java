@@ -1,36 +1,37 @@
 package com.example.growcast;
 
 public class RegUserDet {
-    private String userName,mail,pass;
+    private String mail;
+    private String pass;
+    private String userName;
 
-    public RegUserDet(String userName, String mail, String pass) {
-        this.userName = userName;
-        this.mail = mail;
-        this.pass = pass;
+    public RegUserDet(String userName2, String mail2, String pass2) {
+        this.userName = userName2;
+        this.mail = mail2;
+        this.pass = pass2;
     }
 
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String userName2) {
+        this.userName = userName2;
     }
 
     public String getMail() {
-        return mail;
+        return this.mail;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setMail(String mail2) {
+        this.mail = mail2;
     }
 
     public String getPass() {
-        return pass;
+        return this.pass;
     }
 
     public void setPass(String phoneNumber) {
         this.pass = phoneNumber;
     }
-
 }

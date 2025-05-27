@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appbg2"
+    tools:context=".pineapple">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/back"
+        android:layout_width="136dp"
+        android:layout_height="47dp"
+        android:background="@drawable/fruitbackbt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:logo="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="138dp"
+        android:layout_height="47dp"
+        android:background="@drawable/fruitbuttonbg"
+        android:padding="5dp"
+        android:text="Pineapple"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="436dp"
+        android:layout_height="178dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/papplepage" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:gravity="center_horizontal"
+        android:text="(Ananas comosus)"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.147">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:text="The pineapple is a tropical plant with an edible fruit; it is the most economically significant plant in the family Bromeliaceae."
+                android:textColor="@color/white"
+                android:layout_marginLeft="25dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="BENEFITS"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text="Bromelain, the digestive enzyme in pineapple, has anti-inflammatory and pain-relieving properties. This helps when you have an infection, like sinusitis, or an injury, like a sprain or burn. It also offsets the joint pain of osteoarthritis. The vitamin C in pineapple juice also keeps inflammation levels low."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="FEATURES AND SIGNIFICANCE"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:layout_marginTop="5dp"
+                android:text= "Pineapples are a rich source of antioxidants that may reduce your risk of ailments such as heart disease, diabetes, and certain cancers. Due to its association with warmth and friendliness, pineapples in America were often used as the crowning piece in large displays of food. The pineapple symbol was also used frequently in the 18th and 19th centuries to decorate bed posts, tablecloths, napkins, and anything associated with welcoming guests"
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="HOW TO GROW"
+                android:textColor="#ADF49A"
+                android:textStyle="bold"
+                android:paddingLeft="122dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text="The easiest, most reliable method to grow your own is by planting the crown removed from a store-bought pineapple. This involves removing the crown with at least one inch of stem attached. The stem and crown are allowed to dry and then planted in a pot with well-draining soil."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/sun"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:text="Sunlight"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:layout_marginTop="5dp"
+                android:text="Pineapples love bright, direct sunlight and will do best in a south-facing location in your home. Pineapple plants are a type of Bromeliad, and the pineapples themselves are the fruit of the plant."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/watering"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Water"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text="Evenly distributed rainfall (or irrigation) of 600-1000 mm per year is considered adequate for maximum growth. It is important to note that pineapples need between 80 and 100 millimeters (mm) of rain each month in general. Irrigation is required when the annual precipitation falls below 500 mm"
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/soil"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Soil"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text="Pineapple is grown on various types of soils including very poor soils. The flavour and quality of fruit grown on light soils is considered to be superior.However the sandy and loamy soils rich in humus and the laterite soils on the hillslopes in South India are suitable for its cultivation."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/temperature"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="52dp"
+                    android:text="Temperature"
+                    android:textColor="#ADF49A"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="5dp"
+                android:text="The best temperature for growth is between 20 and 30 °C (68 and 86 °F). It is essential that the night temperature is at least 4 oC (around 9 oF) lower than the day temperature. Fruit development slows down between 10 and 16 °C (50 and 61 °F)."
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/fertilizer"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Fertilizer"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:layout_marginTop="5dp"
+                android:text="Sometimes zinc deficiency appears in pineapple which leads to a condition called Crookneck. Spraying of 0.5 per cent zinc sulphate can prevent it. Ethrel 25 ppm (6.5 ml/100 litres of water) with 2% urea with 0.04% sodium carbonate. The mixture is to be poured into the heart of the plant at 50ml per plant."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

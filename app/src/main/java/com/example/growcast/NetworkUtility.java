@@ -1,4 +1,6 @@
 package com.example.growcast;
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,7 +19,7 @@ public class NetworkUtility {
     private static final String API_KEY = "dd89b00231fe037f3063de2540ed00f1";
 
     public static WeatherItem createHttpRequest(final String cityName) {
-
+        Log.i("CIty Name : ",cityName);
         URL url = createURL(BASE_URL + cityName + "&appid=" + API_KEY); //URL object created
         String json = null;
         try {
@@ -37,7 +39,7 @@ public class NetworkUtility {
         return scrapData(json);
     }
 
-    private static URL createURL(final String LINK) {
+    static URL createURL(final String LINK) {
         try {
             return new URL(LINK);
         } catch (MalformedURLException e) {
@@ -46,7 +48,7 @@ public class NetworkUtility {
         return null;
     }
 
-    private static String setUpConnection(final URL url) throws IOException {
+    static String setUpConnection(final URL url) throws IOException {
         HttpURLConnection urlConnection = null;
         InputStream inputStream = null;
         try {
@@ -55,6 +57,8 @@ public class NetworkUtility {
             urlConnection.setRequestMethod("GET");
             urlConnection.setDoInput(true);
             urlConnection.connect();
+            Log.e("Utility",urlConnection.getResponseMessage());
+            Log.e("Utility",""+urlConnection.getResponseCode());
             if (urlConnection.getResponseCode() == 200) {
                 // If the connection is successful, obtain the input stream and call the readInputStream method to read the raw data
                 inputStream = urlConnection.getInputStream();
@@ -89,7 +93,7 @@ public class NetworkUtility {
 
 // ...
 
-    private static WeatherItem scrapData(final String json) {
+    static WeatherItem scrapData(final String json) {
         try {
             JSONObject rootObject = new JSONObject(json);
             String description = rootObject.optJSONArray("weather").optJSONObject(0).optString("description");
@@ -102,7 +106,7 @@ public class NetworkUtility {
             int roundedTemperature = Integer.parseInt(decimalFormat.format(temperature));
             int roundedFeels = Integer.parseInt(decimalFormat.format(feels));
 
-            return new WeatherItem(description, roundedTemperature, roundedFeels, humidity);
+            return new WeatherItem(description);
         } catch (JSONException e) {
             e.printStackTrace();
         }

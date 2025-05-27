@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appbg2"
+    tools:context=".pomegrante">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/back"
+        android:layout_width="136dp"
+        android:layout_height="47dp"
+        android:background="@drawable/fruitbackbt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:logo="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="168dp"
+        android:layout_height="47dp"
+        android:background="@drawable/fruitbuttonbg"
+        android:padding="5dp"
+        android:text="Pomegranate"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="436dp"
+        android:layout_height="178dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/pomepage" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:gravity="center_horizontal"
+        android:text="(Punica granatum)"
+        android:textColor="@color/white"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.147">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:text="The pomegranate is a fruit-bearing deciduous shrub in the family Lythraceae, subfamily Punicoideae, that grows between 5 and 10 m tall."
+                android:textColor="@color/white"
+                android:layout_marginLeft="25dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="BENEFITS"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginTop="5dp"
+                android:text="Pomegranates can have up to three times more antioxidants than green tea or red wine. Antioxidants protect cells from damage and reduce inflammation and the effects of aging. Studies have suggested that pomegranates can protect your heart in many ways, including lowering blood pressure and reducing blood sugar levels."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="FEATURES AND SIGNIFICANCE"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:layout_marginTop="5dp"
+                android:text= "Pomegranate is a tree. Various parts of the tree and fruit are used to make medicine. People use pomegranate for high blood pressure, athletic performance, heart disease, diabetes, and many other conditions, but there is no good scientific evidence to support most of these uses. The pomegranate was revered for the beauty of its shrub, flowers, and fruit—symbolising sanctity, fertility, and abundance."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="HOW TO GROW"
+                android:textColor="#ADF49A"
+                android:textStyle="bold"
+                android:paddingLeft="122dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text="Pomegranates need plenty of sun to thrive and produce fruit. Look for an area that gets at least 6 hours of direct sun. Good drainage is crucial for pomegranate trees, but they tolerate almost any soil, even poor or alkaline ones. Plant pomegranates in a hole as deep as the nursery pot and twice as wide."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/sun"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:text="Sunlight"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="5dp"
+                android:text="Pomegranates need plenty of sun to thrive and produce fruit. Look for an area that gets at least 6 hours of direct sun. Good drainage is crucial for pomegranate trees, but they tolerate almost any soil, even poor or alkaline ones."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/watering"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Water"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="109dp"
+                android:layout_marginTop="5dp"
+                android:text="pomegranate trees are tolerant to drought and require less water a few years after planting. However, they prefer consistently moist soil while they're bearing fruit. You shouldn't worry too much if you cannot provide additional water, as the plant should survive; however, the tree won't yield as much fruit."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/soil"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Soil"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="5dp"
+                android:text="Pomegranate can be grown on a wide range of soils. However, it grows well in medium deep, loamy and well-drained soils having a pH of 7.5. Heavy soils with poor drainage facilities are unsuitable for its cultivation."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/temperature"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="52dp"
+                    android:text="Temperature"
+                    android:textColor="#ADF49A"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="5dp"
+                android:text="Successful pomegranate cultivation is essentially dry and semi-arid weather, where cold winter and high dry summer quality enables fruit production. Pomegranate plants can tolerate frost to some extent and may be considered drought-tolerant. The optimum temperature for fruit development is 35 -38°C."
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/fertilizer"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Fertilizer"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_marginTop="5dp"
+                android:text="being an orchard crop, is a heavy feeder of nutrients. The recommended fertiliser dose is 600–700 gm of N, 200–250 gm of P2O5 and 200–250 gm of K2O per tree per year. In order to meet these nutritional needs, pomegranate growers should plan and follow the fertiliser management practices in a proper manner."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

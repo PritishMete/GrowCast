@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appbg2"
+    tools:context=".cherry">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/back"
+        android:layout_width="136dp"
+        android:layout_height="47dp"
+        android:background="@drawable/backbt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:logo="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="116dp"
+        android:layout_height="47dp"
+        android:background="@drawable/buttonbg"
+        android:padding="5dp"
+        android:text="Cherry"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="436dp"
+        android:layout_height="178dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/cherrypage" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:gravity="center_horizontal"
+        android:text="(Prunus avium)"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.147">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Prunus avium, commonly called wild cherry, sweet cherry, gean, or bird cherry is a species of cherry, a flowering plant in the rose family. "
+                android:textColor="@color/white"
+                android:layout_marginLeft="25dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="BENEFITS"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:layout_marginTop="5dp"
+                android:text="Cherries are low in calories and chock full of fibre, vitamins, minerals, nutrients, and other good-for-you ingredients. You'll get vitamins C, A, and K. Each long-stemmed fruit delivers potassium, magnesium, and calcium too. They also bring antioxidants, like beta-carotene, and the essential nutrient choline."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="FEATURES AND SIGNIFICANCE"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text= "The fruit is a fleshy drupe (stone fruit) that is generally heart-shaped to nearly globular, measures about 2 cm (1 inch) in diameter, and varies in colour from yellow through red to nearly black. The acid content of the sweet cherry is low. Cherry blossoms symbolize both birth and death, beauty and violence."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="HOW TO GROW"
+                android:textColor="#ADF49A"
+                android:textStyle="bold"
+                android:paddingLeft="122dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:layout_marginTop="5dp"
+                android:text="For cherries to grow properly, you need to provide fertile, well-draining soil, a good amount of sunlight, and meet their water requirements. It is possible to grow a cherry tree at home, With proper guidance, care, and time, yes, you can grow a cherry tree at home."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/sun"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:text="Sunlight"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="71dp"
+                android:layout_marginTop="5dp"
+                android:text="If your tree isn't producing enough fruits considering its age, then fertilize it; otherwise, don't. Ideally, full sunlight for 6–8 hours is necessary for the remarkable growth of cherry trees."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/watering"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Water"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:layout_marginTop="5dp"
+                android:text="In general, in very low-density cherry orchards, On the other hand, when rainfalls are well spread during the growing season and supply cherry trees with sufficient water, there is a limited need for irrigation."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/soil"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Soil"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:layout_marginTop="5dp"
+                android:text="Like all fruit trees, the cherry tree prefers well-drained fertile loam soils with sufficient moisture. However, water-logged and excessively sandy or heavy, calcareous soils should be avoided since cherries are susceptible to root rot. As a rule of thumb, cherry trees prefer soil with a pH ranging from 6 to 7."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/temperature"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="52dp"
+                    android:text="Temperature"
+                    android:textColor="#ADF49A"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="5dp"
+                android:text="Most cherries require around 500-700 hours of winter chill. The optimum temperature is around 6 °C (42.8 °F), while temperatures above 14 °C (57.2 °F) during the chilling period can negate previously accumulated chill."
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/fertilizer"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Fertilizer"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_marginTop="5dp"
+                android:text="If your Cherry tree grows less than 20.5 centimetres a year, it may need fertilizer. If so, buy balanced granules, such as 10-10-10. The quantity of fertilizer to apply depends on the number of years since the tree was planted in your garden. Apply 46 grams of nitrogen for each year of tree age, up to 454 grams."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

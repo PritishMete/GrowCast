@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appbg2"
+    tools:context=".coconut">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/back"
+        android:layout_width="136dp"
+        android:layout_height="47dp"
+        android:background="@drawable/backbt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:logo="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="126dp"
+        android:layout_height="47dp"
+        android:background="@drawable/buttonbg"
+        android:padding="5dp"
+        android:text="Coconut"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="436dp"
+        android:layout_height="178dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/coconutpage" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:gravity="center_horizontal"
+        android:text="(Cocos nucifera)"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.147">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="The coconut tree is a member of the palm tree family and the only living species of the genus Cocos. The term [coconut] can refer to the whole coconut palm, the seed, or the fruit, which botanically is a drupe, not a nut."
+                android:textColor="@color/white"
+                android:layout_marginLeft="25dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="BENEFITS"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="5dp"
+                android:text="Coconut is high in fibre and low in carbs, so it helps control blood sugar levels in our bodies. Coconut meat and water contain numerous antioxidants that fight against factors causing cell damage. The antioxidant also reduces the risk of many diseases such as cancer."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="FEATURES AND SIGNIFICANCE"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="195dp"
+                android:layout_marginTop="5dp"
+                android:text= "Its fruit, as big as a man's head and 1-2 kg in weight, is a drupe with a thin, smooth, grey-brown epicarp, a fibrous, 4-8 cm thick, mesocarp and a woody endocarp; as it is rather light, it can be carried long distances by water while keeping its germinability for a long time. It is believed that coconut is important to lord Ganesha, he was given by his father lord Shiva to play and it was how coconut came into the world. Coconut is used in rituals: in social, family, and religious ceremonies, and is related to fertility, society culture, totems, taboos, and beliefs."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="HOW TO GROW"
+                android:textColor="#ADF49A"
+                android:textStyle="bold"
+                android:paddingLeft="122dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:layout_marginTop="5dp"
+                android:text="Coconut trees are lovely plants that produce tasty fruit. They grow naturally in tropical climates, but you can also plant one at home. Whether you plan to grow your coconut tree outside or as a houseplant, it's an easy process that will produce a charming addition to any yard or home."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/sun"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:text="Sunlight"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="5dp"
+                android:text="Coconut palms thrive in full sun, meaning at least six hours of direct sunlight on most days."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/watering"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Water"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text="Coconut responds well to summer irrigation i.e. summer irrigation at 40 litres per palm per week will increase the yield of nuts by 50%. Under basin irrigation, 200 litres per palm once in four days will be beneficial. In areas where water is scarce drip irrigation system can be adopted."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/soil"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Soil"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="5dp"
+                android:text="The major soil types that support coconut in India are laterite, alluvial, red sandy loam, coastal sandy and reclaimed soils with a pH ranging from 5.2 to 8.0. Soil with a minimum depth of 1.2m and fairly good water holding capacity is preferred for coconut cultivation."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/temperature"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="52dp"
+                    android:text="Temperature"
+                    android:textColor="#ADF49A"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="5dp"
+                android:text="Cold temperatures: Coconut palms will be injured and may be killed by temperatures below 32°F (0°C) and may show chilling injury symptoms of leaflet necrosis at temperatures as high as 40°F (5°C)."
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/fertilizer"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Fertilizer"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:layout_marginTop="5dp"
+                android:text="Recommended dose of fertilizer for coconut palm is application of Organic Manure at 50kg/palm or 30 kg green manure, 500 g N, 320 g P2O5 and 1200 g K2O/palm/year in two split doses during September and May."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

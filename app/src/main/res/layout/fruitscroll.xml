@@ -34,6 +34,7 @@
                     android:id="@+id/ashoka"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="banana"
                     android:src="@drawable/banana" />
 
             </androidx.cardview.widget.CardView>
@@ -49,6 +50,8 @@
                     android:id="@+id/carambola"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="carambola"
+
                     android:src="@drawable/carambola" />
             </androidx.cardview.widget.CardView>
 
@@ -63,6 +66,8 @@
                     android:id="@+id/bberry"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="blackberry"
+
                     android:src="@drawable/bberry" />
             </androidx.cardview.widget.CardView>
 
@@ -77,6 +82,8 @@
                     android:id="@+id/cherry"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="cherry"
+
                     android:src="@drawable/cherry" />
             </androidx.cardview.widget.CardView>
 
@@ -91,6 +98,8 @@
                     android:id="@+id/coconut"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="coconut"
+
                     android:src="@drawable/coconut" />
             </androidx.cardview.widget.CardView>
 
@@ -105,6 +114,8 @@
                     android:id="@+id/cucumber"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="cucumber"
+
                     android:src="@drawable/cucumber" />
             </androidx.cardview.widget.CardView>
 
@@ -119,6 +130,8 @@
                     android:id="@+id/grape"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="grape"
+
                     android:src="@drawable/grape" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -132,6 +145,8 @@
                     android:id="@+id/jackfruit"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="jackfruit"
+
                     android:src="@drawable/jackfruit" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -143,6 +158,8 @@
 
                 <ImageView
                     android:id="@+id/lemon"
+                    android:onClick="lemon"
+
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/lemon" />
@@ -158,6 +175,8 @@
                     android:id="@+id/mango"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:onClick="mango"
+
                     android:src="@drawable/mango" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -169,6 +188,8 @@
 
                 <ImageView
                     android:id="@+id/orange"
+                    android:onClick="orange"
+
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/orange" />
@@ -182,6 +203,8 @@
 
                 <ImageView
                     android:id="@+id/papple"
+                    android:onClick="pineapple"
+
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/papple" />
@@ -195,6 +218,8 @@
 
                 <ImageView
                     android:id="@+id/pepe"
+                    android:onClick="papaya"
+
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/pepe" />
@@ -208,6 +233,8 @@
 
                 <ImageView
                     android:id="@+id/roseapple"
+                    android:onClick="roseapple"
+
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/roseapple" />
@@ -221,6 +248,8 @@
 
                 <ImageView
                     android:id="@+id/pomegranate"
+                    android:onClick="pomegrante"
+
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/pomegranate" />
@@ -234,6 +263,8 @@
 
                 <ImageView
                     android:id="@+id/strawberry"
+                    android:onClick="strawberry"
+
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/strawberry" />

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appbg2"
+    tools:context=".mango">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/back"
+        android:layout_width="136dp"
+        android:layout_height="47dp"
+        android:background="@drawable/fruitbackbt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:logo="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="116dp"
+        android:layout_height="47dp"
+        android:background="@drawable/fruitbuttonbg"
+        android:padding="5dp"
+        android:text="Mango"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="436dp"
+        android:layout_height="178dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/mangopage" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:gravity="center_horizontal"
+        android:text="(Mangifera indica)"
+        android:textColor="@color/white"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="610dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.147">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:text="Mangifera indica, also known as mango, aam, it has been an important herb in the Ayurvedic and indigenous medical systems for over 4000 years. Mangoes belong to genus Mangifera which consists of about 30 species of tropical fruiting trees in the flowering plant family Anacardiaceae. "
+                android:textColor="@color/white"
+                android:layout_marginLeft="25dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="BENEFITS"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="126dp"
+                android:layout_marginTop="5dp"
+                android:text="They are a great source of magnesium and potassium, both of which are connected to lower blood pressure and a regular pulse. Furthermore, mangos are the source of a compound known as mangiferin, which early studies suggest may be able to reduce inflammation of the heart. Mangos can help stabilize your digestive system."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:text="FEATURES AND SIGNIFICANCE"
+                android:textColor="#ED6C7B"
+                android:textStyle="bold"
+                android:layout_marginLeft="25dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="179dp"
+                android:layout_marginTop="5dp"
+                android:text= "The immature fruit has green skin that gradually turns yellow, orange, purple, red, or combinations of these colors as the fruit matures. Mature fruit has a characteristic fragrance and a smooth, thin, tough skin. The flesh of ripe mangos is pale yellow to orange. The flesh is juicy, sweet, and sometimes fibrous. Mango is rich in vitamins, minerals, and antioxidants, and it has been associated with many health benefits, including potential anticancer effects, as well as improved immunity and digestive and eye health. "
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="HOW TO GROW"
+                android:textColor="#ADF49A"
+                android:textStyle="bold"
+                android:paddingLeft="122dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="5dp"
+                android:text="Mango trees are easy to grow, and the ripe mangoes are delicious. The best way to grow mangoes is to plant them in pots filled with potting soil. When planting, be careful not to damage the roots. Water the tree regularly, and fertilize once a month."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/sun"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:text="Sunlight"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="5dp"
+                android:text="Mango trees require full sun, meaning at least eight hours of direct sunlight on most days. Their flower and fruit production will suffer if they don't get enough light. A south-facing window indoors can work, but it's best to move the pot outside as much as possible for full sunlight exposure."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/watering"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Water"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="109dp"
+                android:layout_marginTop="5dp"
+                android:text="A fruit-bearing mango tree requires up to 50-120 litres per day. Covering mangoes' water needs during the full bearing stage with 2-3 applications after the fruit set is essential to encourage a flush for fruit growth. On the contrary, irrigations should stop-avoided 2-3 months before flowering."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/soil"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Soil"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_marginTop="5dp"
+                android:text="Mango grows well on all types of soil provided they are deep and well drained. Red loamy soils are quite ideal. Alkaline, ill drained and soils with rocky substratum are not suitable for successful cultivation of mango crop. In India, mango is grown on lateritic, alluvial, kankar and other types of soil."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="190dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/temperature"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="52dp"
+                    android:text="Temperature"
+                    android:textColor="#ADF49A"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="5dp"
+                android:text="Mango plants require at least 50% humidity levels for optimum growth. They prefer temperatures above 10°C. They can survive temperatures below 4.5°C however very cold temperatures or frost may damage the plant."
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#00FFFFFF">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/fertilizer"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Fertilizer"
+                    android:textColor="#ADF49A"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="52dp"
+                    android:textSize="23dp"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="5dp"
+                android:text="Complete fertilizer containing 6 to 10 percent nitrogen, 6 to 10 percent phosphorus, and 4 to 6 percent magnesium is suitable for young Mango trees. Be careful not to apply too much fertilizer to young trees."
+                android:textColor="@color/white"
+                android:layout_marginLeft="37dp"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

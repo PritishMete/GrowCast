@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
-
-
 
     <application
         android:allowBackup="true"
@@ -22,10 +23,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrowCast"
         tools:targetApi="31">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="cae6d8c4b4msh36f9ccfb43058c8p1872f9jsnf80db829f449" />
+            android:value="@string/google_api_key" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+
+
+
+
+        <activity
+            android:name=".shop"
+            android:exported="false"
+            android:label="@string/title_activity_shop" />
         <activity
             android:name=".login"
             android:exported="true">
@@ -39,7 +74,6 @@
         <activity android:name=".user" />
         <activity android:name=".forgot" />
         <activity android:name=".page1" />
-        <activity android:name=".shop" />
         <activity android:name=".flowerscroll" />
         <activity android:name=".fruitscroll" />
         <activity android:name=".vegscroll" />
@@ -61,7 +95,22 @@
         <activity android:name=".tulip" />
         <activity android:name=".note" />
 
-
+        <activity android:name=".banana" />
+        <activity android:name=".carambola" />
+        <activity android:name=".blackberry" />
+        <activity android:name=".cherry" />
+        <activity android:name=".coconut" />
+        <activity android:name=".cucumber" />
+        <activity android:name=".grape" />
+        <activity android:name=".jackfruit" />
+        <activity android:name=".lemon" />
+        <activity android:name=".mango" />
+        <activity android:name=".orange" />
+        <activity android:name=".pineapple" />
+        <activity android:name=".roseapple" />
+        <activity android:name=".papaya" />
+        <activity android:name=".strawberry" />
+        <activity android:name=".pomegrante" />
 
     </application>
 

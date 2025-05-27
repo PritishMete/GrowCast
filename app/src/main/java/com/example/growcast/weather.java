@@ -4,9 +4,11 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,150 +22,144 @@ import androidx.loader.content.Loader;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 public class weather extends AppCompatActivity implements LoaderManager.LoaderCallbacks<WeatherItem> {
 
-    private static final String API_KEY = "dd89b00231fe037f3063de2540ed00f1";
-    private static final String API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=" + API_KEY;
-
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
+
+    // API Key for OpenWeatherMap
+    private static final String API_KEY = "dd89b00231fe037f3063de2540ed00f1";
 
     private TextView temperatureValueTextView;
     private TextView descriptionValueTextView;
     private TextView feelsLikeValueTextView;
     private TextView humidityValueTextView;
-
-    private FusedLocationProviderClient fusedLocationClient;
-    private String currentCity;
-
-    private DatabaseReference databaseReference;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseUser currentUser;
+    private Button refreshButton;
+    private TextView citynameTextView; // Added cityNameTextView
+    private ProgressBar loadingProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weather);
-        init();
-
-
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        firebaseAuth = FirebaseAuth.getInstance();
-        currentUser = firebaseAuth.getCurrentUser();
-
-        // Initialize Firebase
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-
-        if (checkLocationPermission()) {
-            // Check if location data already exists in the Firebase database
-            checkLocationDataInFirebase();
-        } else {
-            requestLocationPermission();
+        // Create an instance of WeatherItem
+//        WeatherItem weatherItem = new WeatherItem("haze", 25.5, 26.0, 60.0);
+        String weatherCondition = "haze"; // Replace with the actual weather condition
+        String description;
+        if (weatherCondition.equals("haze")) {
+            description = "haze";
+        } else if (weatherCondition.equals("thunderstorm")) {
+            description = "thunderstorm";
+        }else if (weatherCondition.equals("broken clouds")) {
+            description = "broken clouds";
+        } else if (weatherCondition.equals("clear sky")) {
+            description = "clear sky";
+        }else {
+            // Set a default description if none of the conditions match
+            description = "unknown";
         }
-    }
+        WeatherItem weatherItem = new WeatherItem(description);
 
-    private void init() {
-        temperatureValueTextView = findViewById(R.id.temperatureValueTextView);
-        descriptionValueTextView = findViewById(R.id.descriptionValueTextView);
-        feelsLikeValueTextView = findViewById(R.id.feelsLikeValueTextView);
-        humidityValueTextView = findViewById(R.id.humidityValueTextView);
-    }
+        // Get a reference to the ImageView in your layout
+        ImageView weatherImageView = findViewById(R.id.weatherImageView);
 
-    private boolean checkLocationPermission() {
-        int permissionResult = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        return permissionResult == PackageManager.PERMISSION_GRANTED;
-    }
+        // Set the weather image using the setWeatherImage method
+        weatherItem.setWeatherImage(weatherImageView);
+        initViews();
 
-    private void requestLocationPermission() {
-        ActivityCompat.requestPermissions(
-                this,
-                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                LOCATION_PERMISSION_REQUEST_CODE
-        );
-    }
+        // Request location permission
+        requestLocationPermission();
 
-    private void checkLocationDataInFirebase() {
-        String userIdentifier = getCurrentUserIdentifier();
-        if (userIdentifier != null) {
-            // Query the Firebase database to check if location data exists for the current user
-            databaseReference.child("locations").child(userIdentifier).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        // Location data exists, retrieve it and search weather
-                        LocationData locationData = dataSnapshot.getValue(LocationData.class);
-                        if (locationData != null) {
-                            double latitude = locationData.getLatitude();
-                            double longitude = locationData.getLongitude();
-                            String cityName = locationData.getCityName();
-                            currentCity = cityName;
-                            searchWeather(cityName);
-                        }
-                    } else {
-                        // Location data doesn't exist, request current location
-                        getCurrentLocation();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Log.e("Firebase", "Failed to read location data", databaseError.toException());
-                }
-            });
-        } else {
-            // User identifier is null, handle the case as desired
-            // In this example, we simply request the location again
-            getCurrentLocation();
-        }
-    }
-
-    private void getCurrentLocation() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        fusedLocationClient.getLastLocation().addOnCompleteListener(this, new OnCompleteListener<Location>() {
+        // Set click listener for refresh button
+        refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                if (task.isSuccessful() && task.getResult() != null) {
-                    Location location = task.getResult();
-                    double latitude = location.getLatitude();
-                    double longitude = location.getLongitude();
-                    String cityName = getCityNameFromCoordinates(latitude, longitude);
-                    if (cityName != null) {
-                        currentCity = cityName;
-                        storeLocationToFirebase(latitude, longitude, cityName);
-                        searchWeather(cityName);
-                    } else {
-                        Toast.makeText(weather.this, "Failed to get city name", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(weather.this, "Failed to get current location", Toast.LENGTH_SHORT).show();
-                }
+            public void onClick(View v) {
+                refreshWeather();
             }
         });
     }
 
-    private String getCityNameFromCoordinates(double latitude, double longitude) {
+    private void initViews() {
+        // Initialize TextViews
+        temperatureValueTextView = findViewById(R.id.temperatureValueTextView);
+        descriptionValueTextView = findViewById(R.id.descriptionValueTextView);
+        feelsLikeValueTextView = findViewById(R.id.feelsLikeValueTextView);
+        humidityValueTextView = findViewById(R.id.humidityValueTextView);
+        citynameTextView = findViewById(R.id.citynameTextView); // Initialize cityNameTextView
+        loadingProgressBar = findViewById(R.id.loadingProgressBar);
+
+        // Initialize Refresh Button
+        refreshButton = findViewById(R.id.refreshButton);
+    }
+    private void showLoading() {
+        loadingProgressBar.setVisibility(View.VISIBLE);
+    }
+
+
+
+    private void requestLocationPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted, request it
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    LOCATION_PERMISSION_REQUEST_CODE);
+        } else {
+            // Permission is already granted, fetch location
+            fetchLocation();
+        }
+    }
+
+    private void fetchLocation() {
+        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, location -> {
+                    if (location != null) {
+                        double latitude = location.getLatitude();
+                        double longitude = location.getLongitude();
+
+                        // Fetch the location name using Geocoder
+                        String cityName = getLocationName(latitude, longitude);
+
+                        if (cityName != null) {
+                            // Update the city name TextView
+                            citynameTextView.setText(cityName);
+
+                            // Fetch the user's email ID
+                            String userEmail = getUserEmail();
+
+                            // Upload the latitude, longitude, and location name to the database
+                            uploadLocation(latitude, longitude, cityName, userEmail);
+
+                            // Load weather data using the fetched location
+                            LoaderManager.getInstance(this).initLoader(1, null, this);
+                        } else {
+                            Toast.makeText(this, "Unable to get location name", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(this, "Unable to get location", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(this, e -> {
+                    Toast.makeText(this, "Error getting location", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                });
+    }
+
+    private String getLocationName(double latitude, double longitude) {
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         try {
-            Geocoder geocoder = new Geocoder(this, Locale.getDefault());
             List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
             if (addresses != null && addresses.size() > 0) {
                 Address address = addresses.get(0);
@@ -175,61 +171,94 @@ public class weather extends AppCompatActivity implements LoaderManager.LoaderCa
         return null;
     }
 
-    private void storeLocationToFirebase(double latitude, double longitude, String cityName) {
-        String userIdentifier = getCurrentUserIdentifier();
-        if (userIdentifier != null) {
-            Map<String, Object> locationData = new HashMap<>();
-            locationData.put("latitude", latitude);
-            locationData.put("longitude", longitude);
-            locationData.put("cityName", cityName);
-
-            databaseReference.child("locations").child(userIdentifier).setValue(locationData)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Log.d("Firebase", "Location stored successfully");
-                            } else {
-                                Log.e("Firebase", "Failed to store location", task.getException());
-                            }
-                        }
-                    });
-        } else {
-            // User identifier is null, handle the case as desired
-            // In this example, we simply log an error message
-            Log.e("Firebase", "Failed to store location: User identifier is null");
+    private String getUserEmail() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            return user.getEmail();
         }
+        return null;
     }
 
-    private void searchWeather(String cityName) {
-        LoaderManager.getInstance(this).restartLoader(1, null, this);
+    private void uploadLocation(double latitude, double longitude, String cityName, String userEmail) {
+        // Modify the email ID to use a valid path format
+        String modifiedEmail = userEmail.replace(".", "_");
+
+
+        // Upload latitude, longitude, city name, and modified email ID to the database
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference locationRef = databaseReference.child("locations").child(modifiedEmail);
+        locationRef.child("latitude").setValue(latitude);
+        locationRef.child("longitude").setValue(longitude);
+        locationRef.child("cityName").setValue(cityName);
+    }
+
+    private void refreshWeather() {
+        showLoading();
+
+        // Clear existing weather data
+        temperatureValueTextView.setText("");
+        humidityValueTextView.setText("");
+        descriptionValueTextView.setText("");
+        feelsLikeValueTextView.setText("");
+
+        // Check if location permission is granted
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            // Show loading progress
+
+            // Fetch the updated weather data
+            fetchLocation();
+        } else {
+            // Request location permission
+            requestLocationPermission();
+        }
     }
 
     @NonNull
     @Override
     public Loader<WeatherItem> onCreateLoader(int id, @Nullable Bundle args) {
-        return new WeatherLoader(weather.this, currentCity);
+
+        // Show loading progress
+        showLoading();
+        // Create a WeatherLoader with the city name or other location information
+        return new WeatherLoader(this, "Kolkata");
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<WeatherItem> loader, WeatherItem data) {
-        temperatureValueTextView.setText(String.valueOf(data.getTemperature()) + " °c" );
-        descriptionValueTextView.setText(data.getDescription());
-        feelsLikeValueTextView.setText(String.valueOf(data.getFeels()) + " °c");
-        humidityValueTextView.setText(String.valueOf(data.getHumidity()) + " %");
-        TextView locationNameTextView = findViewById(R.id.cityname);
-        locationNameTextView.setText(currentCity);
+        if (data != null) {
+            // Set weather data to the corresponding TextViews
+            temperatureValueTextView.setText(String.format(Locale.getDefault(), "%.1f °C", data.getTemperature()));
+            humidityValueTextView.setText(String.format(Locale.getDefault(), "%.1f °C", data.getHumidity()));
+            descriptionValueTextView.setText(data.getDescription());
+            feelsLikeValueTextView.setText(String.format(Locale.getDefault(), "%.1f °C", data.getFeels()));
+        } else {
+            Toast.makeText(this, "Error loading weather data", Toast.LENGTH_SHORT).show();
+        }
+        // Hide loading progress
+        hideLoading();
+
+    }
+    private void hideLoading() {
+        loadingProgressBar.setVisibility(View.GONE);
     }
 
     @Override
     public void onLoaderReset(@NonNull Loader<WeatherItem> loader) {
-        // No implementation needed
+        // Reset or clear any data if needed
     }
 
-    private String getCurrentUserIdentifier() {
-        if (currentUser != null) {
-            return currentUser.getUid();
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Location permission granted, fetch location
+                fetchLocation();
+            } else {
+                // Location permission denied
+                Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show();
+            }
         }
-        return null;
     }
 }
