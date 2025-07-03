@@ -1,1 +1,39 @@
-add your json file
+{
+  "project_info": {
+    "project_number": "1075537411436",
+    "project_id": "growcast-678b1",
+    "storage_bucket": "growcast-678b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075537411436:android:c7e26129f450d010f40749",
+        "android_client_info": {
+          "package_name": "com.example.growcast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075537411436-tft5v891pp868b3m483l7u3hm74hoi74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsalJhS99zK4Fk79KmdIVML3MGAIj4I6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075537411436-tft5v891pp868b3m483l7u3hm74hoi74.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
